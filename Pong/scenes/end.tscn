@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cu8d83mhdkm4v"]
 
-[ext_resource type="Script" path="res://scenes/End.gd" id="1_8ctwx"]
+[ext_resource type="Script" path="res://script/End.gd" id="1_oha83"]
 [ext_resource type="FontFile" uid="uid://chg50anyvp10q" path="res://assets/pixel_font.ttf" id="2_tgvjc"]
 
 [sub_resource type="Gradient" id="Gradient_q638v"]
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_8ctwx")
+script = ExtResource("1_oha83")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
