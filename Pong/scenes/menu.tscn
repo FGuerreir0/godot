@@ -1,0 +1,103 @@
+[gd_scene load_steps=5 format=3 uid="uid://dhdy1qb6reenv"]
+
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_c3mje"]
+[ext_resource type="FontFile" uid="uid://chg50anyvp10q" path="res://assets/pixel_font.ttf" id="1_ebpcj"]
+
+[sub_resource type="Gradient" id="Gradient_3lg5r"]
+offsets = PackedFloat32Array(0, 0.649351, 1)
+colors = PackedColorArray(0, 0, 0.101961, 1, 0.737193, 0.737193, 0.737193, 1, 0.920995, 0.920995, 0.920995, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7rb5d"]
+gradient = SubResource("Gradient_3lg5r")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_c3mje")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_7rb5d")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Seperator4" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 7
+theme_override_constants/shadow_offset_y = 6
+theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_font_sizes/font_size = 90
+text = "PONG
+THE REMAKE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+theme_override_constants/separation = 34
+alignment = 2
+
+[node name="StartGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_font_sizes/font_size = 24
+text = "Player vs CPU
+"
+
+[node name="StartGamePlayer" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_font_sizes/font_size = 24
+text = "Player vs Player
+"
+
+[node name="ExitGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_font_sizes/font_size = 24
+text = "EXIT
+"
+
+[node name="Seperator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
