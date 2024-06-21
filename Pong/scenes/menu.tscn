@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhdy1qb6reenv"]
 
-[ext_resource type="FontFile" uid="uid://chg50anyvp10q" path="res://assets/pixel_font.ttf" id="1_ebpcj"]
 [ext_resource type="Script" path="res://script/menu.gd" id="1_uepai"]
+[ext_resource type="FontFile" uid="uid://chg50anyvp10q" path="res://assets/fonts/pixel_font.ttf" id="2_5577f"]
 
 [sub_resource type="Gradient" id="Gradient_3lg5r"]
 offsets = PackedFloat32Array(0, 0.649351, 1)
@@ -52,7 +52,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 7
 theme_override_constants/shadow_offset_y = 6
-theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_fonts/font = ExtResource("2_5577f")
 theme_override_font_sizes/font_size = 90
 text = "PONG
 THE REMAKE"
@@ -72,7 +72,7 @@ alignment = 2
 [node name="StartGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_fonts/font = ExtResource("2_5577f")
 theme_override_font_sizes/font_size = 24
 text = "Player vs CPU
 "
@@ -80,7 +80,7 @@ text = "Player vs CPU
 [node name="StartGamePlayer" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_fonts/font = ExtResource("2_5577f")
 theme_override_font_sizes/font_size = 24
 text = "Player vs Player
 "
@@ -88,7 +88,7 @@ text = "Player vs Player
 [node name="ExitGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_ebpcj")
+theme_override_fonts/font = ExtResource("2_5577f")
 theme_override_font_sizes/font_size = 24
 text = "EXIT
 "

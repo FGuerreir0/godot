@@ -1,12 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://gv38rbkwvwh4"]
+[gd_scene load_steps=17 format=3 uid="uid://gv38rbkwvwh4"]
 
-[ext_resource type="Texture2D" uid="uid://2kfw0j80ufe6" path="res://assets/Bg.png" id="1_7uhkm"]
-[ext_resource type="FontFile" uid="uid://chg50anyvp10q" path="res://assets/pixel_font.ttf" id="2_nldrd"]
+[ext_resource type="Texture2D" uid="uid://2kfw0j80ufe6" path="res://assets/images/Bg.png" id="1_iglt8"]
 [ext_resource type="Script" path="res://script/main.gd" id="2_tju5w"]
 [ext_resource type="Script" path="res://script/Player.gd" id="3_yr1xn"]
+[ext_resource type="AudioStream" uid="uid://c1hhys46esl35" path="res://assets/audio/player.wav" id="4_akmvc"]
 [ext_resource type="Script" path="res://script/Player2.gd" id="4_l3s8w"]
 [ext_resource type="Script" path="res://script/CPU.gd" id="5_6f1a0"]
 [ext_resource type="Script" path="res://script/Ball.gd" id="6_0l754"]
+[ext_resource type="FontFile" uid="uid://chg50anyvp10q" path="res://assets/fonts/pixel_font.ttf" id="7_7cqj5"]
+[ext_resource type="AudioStream" uid="uid://cvbrp5246nkxl" path="res://assets/audio/border.wav" id="8_7l6x1"]
+[ext_resource type="AudioStream" uid="uid://bw3jdh3tqaj8l" path="res://assets/audio/goal.mp3" id="9_vsk75"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqnpl"]
 size = Vector2(20, 120)
@@ -28,7 +31,7 @@ size = Vector2(28, 647.5)
 
 [node name="Main" type="Sprite2D"]
 texture_filter = 1
-texture = ExtResource("1_7uhkm")
+texture = ExtResource("1_iglt8")
 centered = false
 script = ExtResource("2_tju5w")
 
@@ -107,6 +110,12 @@ grow_vertical = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
 shape = SubResource("RectangleShape2D_ybahd")
 
+[node name="playerCollision" type="AudioStreamPlayer2D" parent="Ball"]
+stream = ExtResource("4_akmvc")
+
+[node name="borderCollision" type="AudioStreamPlayer2D" parent="Ball"]
+stream = ExtResource("8_7l6x1")
+
 [node name="Borders" type="StaticBody2D" parent="."]
 collision_layer = 2
 
@@ -137,7 +146,7 @@ offset_left = 456.0
 offset_top = 5.0
 offset_right = 506.0
 offset_bottom = 55.0
-theme_override_fonts/font = ExtResource("2_nldrd")
+theme_override_fonts/font = ExtResource("7_7cqj5")
 theme_override_font_sizes/font_size = 50
 text = "0"
 horizontal_alignment = 1
@@ -149,13 +158,16 @@ offset_left = 648.0
 offset_top = 5.0
 offset_right = 698.0
 offset_bottom = 55.0
-theme_override_fonts/font = ExtResource("2_nldrd")
+theme_override_fonts/font = ExtResource("7_7cqj5")
 theme_override_font_sizes/font_size = 50
 text = "0"
 
 [node name="BallTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="goalSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_vsk75")
 
 [connection signal="body_entered" from="ScoreLeft" to="." method="_on_score_left_body_entered"]
 [connection signal="body_entered" from="ScoreRight" to="." method="_on_score_right_body_entered"]

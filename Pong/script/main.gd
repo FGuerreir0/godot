@@ -4,6 +4,7 @@ extends Sprite2D
 @onready var end_scene = preload("res://scenes/end.tscn") as PackedScene
 @onready var opponent = $CPU
 @onready var player2_opponent = $Player2
+@onready var goal = $goalSound
 
 const PADDLE_SPEED : int = 500
 
@@ -17,6 +18,7 @@ func _on_ball_timer_timeout():
 	$Ball.new_ball()
 
 func check_score_end():
+	goal.play()
 	$"Hud/CPU Score".text = str(Singleton.score[1])
 	$"Hud/Player Score".text = str(Singleton.score[0])
 	
